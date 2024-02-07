@@ -9,15 +9,16 @@ class Result
 
     public $result = self::SUCCESS;
     public $data = array();
+    public $code = array();
 
     public function __construct(array $args)
     {
         foreach($args as $arg){
             if(is_string($arg)){
-                $this->code = $arg;
+                $this->code[] = $arg;
                 continue;
             }
-            $this->data = $arg;
+            $this->data[] = $arg;
         }
     }
 
